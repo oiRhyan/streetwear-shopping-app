@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "815343877457",
+    "project_id": "streetwearshopping-15c58",
+    "storage_bucket": "streetwearshopping-15c58.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815343877457:android:e790fcf3c4d8de1f5da770",
+        "android_client_info": {
+          "package_name": "com.dev.rhyan.stutwear"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz7HjiEh3XYDQ4kMH2W4Q6CEj8UETFHrg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
