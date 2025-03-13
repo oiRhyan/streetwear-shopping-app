@@ -6,5 +6,5 @@ object Utils {
 
 }
 
-val API_URL = "https://api.sneakersapi.dev/api/v3/stockx/"
-val API_KEY = "sd_iN0sAf4AuUnvk4QPv0HmqhymZnbSL9vB"
+val API_URL = ""
+val API_KEY = ""
