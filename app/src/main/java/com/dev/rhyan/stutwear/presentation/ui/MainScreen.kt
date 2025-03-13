@@ -63,10 +63,10 @@ fun MainScreen() {
         Column(
             modifier = Modifier.background(Color(0xFF161616))
         ) {
-            NavHost(navController = navhost, startDestination = "Home") {
-                //composable("login") {
-                 //   LoginScreen()
-               // }
+            NavHost(navController = navhost, startDestination = "login") {
+                composable("login") {
+                    LoginScreen()
+                }
                 composable("Home") {
                     HomeScreen()
                 }
