@@ -6,24 +6,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.dev.rhyan.stutwear.presentation.theme.StutWearTheme
-import com.dev.rhyan.stutwear.presentation.ui.HomeScreenTest
-import com.dev.rhyan.stutwear.presentation.ui.home.HomeScreen
+import com.dev.rhyan.stutwear.presentation.ui.MainScreen
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             StutWearTheme {
-                HomeScreen()
+                MainScreen()
             }
         }
     }
@@ -35,6 +30,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     StutWearTheme {
-        HomeScreen()
+        MainScreen()
     }
 }

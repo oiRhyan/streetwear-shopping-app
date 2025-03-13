@@ -33,15 +33,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.dev.rhyan.stutwear.R
+import com.dev.rhyan.stutwear.data.models.response.Product
 
 
 @Composable
-fun ShoesCardItem() {
+fun ShoesCardItem(product  : Product) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 9.dp),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFF161616)
+            containerColor = Color(0xFF222222)
         ),
         modifier = Modifier
             .width(180.dp)
@@ -50,16 +51,16 @@ fun ShoesCardItem() {
         Column(
             modifier = Modifier.padding(10.dp)
         ) {
-            ShowItemImage()
+            ShowItemImage(product.image.toString())
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "Nike Dunk Low Reverse Panda",
+                text = "${product.title}",
                 fontWeight = FontWeight.Bold,
                 fontSize = 15.sp,
                 color = Color.White
             )
             Text(
-                text = "Black/White",
+                text = "${product.min_price}",
                 fontSize = 12.sp,
                 color = Color.Gray
             )
@@ -69,7 +70,7 @@ fun ShoesCardItem() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "R$870,00",
+                    text = "${product.avg_price}",
                     fontSize = 13.sp,
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.padding(end = 8.dp),
@@ -105,21 +106,15 @@ fun ShoesCardItem() {
 }
 
 @Composable
-private fun ShowItemImage() {
+private fun ShowItemImage(image : String) {
     AsyncImage(
         modifier = Modifier
             .background(Color.White, RoundedCornerShape(20.dp))
             .size(190.dp, 98.dp)
             .clip(RoundedCornerShape(20.dp))
             .padding(10.dp),
-        model = painterResource(id = R.drawable.nike_banner),
+        model = image,
         contentDescription = "Imagem do Tênis",
         contentScale = ContentScale.FillWidth
     )
-}
-
-@Preview(showSystemUi = true)
-@Composable
-fun GetPreviewFromShoesCard() {
-    ShoesCardItem()
 }

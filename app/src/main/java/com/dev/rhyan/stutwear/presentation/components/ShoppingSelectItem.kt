@@ -129,28 +129,30 @@ val icons = listOf<TabItem>(
     TabItem(
         selectedIcon = R.drawable.adidas,
         unselectedIcon = R.drawable.adidaswhite,
-        title = "Nike"
+        title = "Adidas"
     ),
     TabItem(
         selectedIcon = R.drawable.palace,
         unselectedIcon = R.drawable.palacewhite,
-        title = "Nike"
+        title = "Palace"
     ),
     TabItem(
         selectedIcon = R.drawable.supreme_black,
         unselectedIcon = R.drawable.supreme_white,
-        title = "Nike"
+        title = "Supreme"
     ),
     TabItem(
         selectedIcon = R.drawable.northblack,
         unselectedIcon = R.drawable.northwhite,
-        title = "Nike"
+        title = "North Face"
     ),
 )
 
-@Preview(showBackground = true)
+
 @Composable
-fun CustomTabLayoutCircularDemo() {
+fun CustomTabLayoutCircularDemo(
+     onSelected : (String) -> Unit
+) {
     var selectedTabIndex by remember { mutableStateOf(0) }
     CustomCircularTabLayout(
         modifier = Modifier.fillMaxWidth().padding(20.dp),
@@ -158,5 +160,6 @@ fun CustomTabLayoutCircularDemo() {
         selectedTabIndex = selectedTabIndex
     ) {
         selectedTabIndex = it
+        onSelected(icons[selectedTabIndex].title)
     }
 }
